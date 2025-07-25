@@ -34,7 +34,7 @@ void add_to_head(dlist* list, int data){
 void print_list(dlist* dlist){
     struct node* tmp = dlist->head;
     while (tmp != NULL){
-        printf("tmp->data is %d\n", tmp->data);  // 添加 \n
+        printf("tmp->data is %d\n", tmp->data);
         tmp = tmp->next;
     }
 }
@@ -53,7 +53,7 @@ int main(){
     add_to_head(scores, 3);
     print_list(scores);
     
-    // 先释放所有节点
+    // Free the memroy of nodes.
     struct node* current = scores->head;
     while(current != NULL){
         struct node* next = current->next;
@@ -61,7 +61,7 @@ int main(){
         current = next;
     }
     
-    // 最后释放链表结构
+    // Free the memory of linkedlist.
     free(scores);
     return 0;
 }
