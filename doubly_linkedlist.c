@@ -39,8 +39,12 @@ void print_list(dlist* dlist){
     }
 }
 
-void get_prev_node() {
-    // 你的函数实现
+void printf_reverse_list(dlist* dlist) {
+    struct node* last = dlist->tail;
+    while (last != NULL){
+        printf("last->data=%d\n", last->data);  // 打印当前节点的数据
+        last = last->prev;                      // 移动到前一个节点
+    }
 }
 
 int main(){
@@ -51,7 +55,8 @@ int main(){
     add_to_head(scores, 1);
     add_to_head(scores, 2);
     add_to_head(scores, 3);
-    print_list(scores);
+    // print_list(scores);
+    printf_reverse_list(scores);
     
     // Free the memroy of nodes.
     struct node* current = scores->head;
