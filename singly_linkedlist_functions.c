@@ -16,14 +16,10 @@ typedef struct singly_linked_list slist;
 void add_to_head(slist* slist, int data) {
     struct node* new_node = malloc(sizeof(struct node));
     new_node->data = data;
-    new_node->next = NULL;
-    if (slist->head == NULL){
-        slist->head = new_node;
+    new_node->next = slist->head;
+    slist->head = new_node;
+    if (slist->tail == NULL){
         slist->tail = new_node;
-    }
-    else {
-        new_node->next = slist->head;
-        slist->head = new_node;
     }
 }
 
