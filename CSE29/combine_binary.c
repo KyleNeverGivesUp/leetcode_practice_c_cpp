@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
-
+#include <stdlib.h>
 uint8_t combine_num(uint8_t num1, uint8_t num2){
    return (num1 & 0xF) << 4 | (num2 & 0xF);
 }
