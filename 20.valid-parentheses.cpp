@@ -37,7 +37,7 @@ public:
         std::unordered_map<char, char> pairings;
         pairings.insert( { ')', '(' });
         pairings.insert( { ']', '[' } );
-        pairings.insert( { '}', '}' } );
+        pairings.insert( { '}', '{' } );
 
         for(auto &c : s){
             if (pairings.find(c) == pairings.end()){
