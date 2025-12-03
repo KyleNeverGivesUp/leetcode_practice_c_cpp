@@ -15,7 +15,7 @@ public:
             for (int j=0; j<col; ++j){
                 if (grid[i][j] == 1){
                     // int area = dfs(grid, i, j, row, col);
-                    // if (area>max_area) max_area = area;
+                    // if (area>max_area) max_area = area
                     max_area = max(max_area, dfs(grid, i, j, row, col));
                 }
             }
