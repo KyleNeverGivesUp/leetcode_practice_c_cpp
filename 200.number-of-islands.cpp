@@ -22,7 +22,7 @@ public:
     return count;
     }
     void dfs(vector<vector<char>>& grid, int x, int y, int r, int c){
-        if(x < 0 || x>=r || y<0 || y>=c || grid[x][y]=='0') return;
+        if(x < 0 || x>=r || y<0 || y>=c || grid[x][y]!='0') return;
         grid[x][y] = '0';
         dfs(grid, x+1, y, r, c);
         dfs(grid, x-1, y, r, c);
