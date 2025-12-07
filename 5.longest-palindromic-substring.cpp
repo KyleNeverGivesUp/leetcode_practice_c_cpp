@@ -17,7 +17,7 @@ public:
             int curr_len = max(odd_len, even_len);
             if (curr_len > max_len ){
                 max_len = curr_len;
-                  start = i - (curr_len -1)/2;
+                   start = i - (curr_len -1)/2;
             }
         
         }
