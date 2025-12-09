@@ -19,7 +19,6 @@ public:
                 max_len = curr_len;
                 start = i - (curr_len -1)/2;
             }
-        
         }
         return s.substr(start, max_len);
     }
