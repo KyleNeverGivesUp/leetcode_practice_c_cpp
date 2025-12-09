@@ -22,7 +22,7 @@ public:
         }
         return s.substr(start, max_len);
     }
-
+    
     int search(string s, int left, int right){
         while(left >= 0 && right < s.size() && s[left] == s[right]){
             left--;
