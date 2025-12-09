@@ -17,6 +17,7 @@ public:
             // if (x < INT_MIN || x > INT_MAX || pop >= 8 || pop<=-7) return 0;
             if (x < INT_MIN || x > INT_MAX || rev * 10 + pop < INT_MIN || rev * 10 + pop > INT_MAX) return 0;
             pop = x % 10;
+            
             x = x / 10;
             rev = rev * 10 + pop;
             cout << "rev: " << rev << endl;
