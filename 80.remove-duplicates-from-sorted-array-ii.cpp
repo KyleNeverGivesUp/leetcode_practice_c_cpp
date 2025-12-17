@@ -9,12 +9,16 @@ class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
         int insertIndex = 1;
-        int count = 1;
+        int count =0;
         for (int i=1; i<nums.size(); i++){
-            if (nums[i] == nums[i-1]) count++;
-            else count = 1;
-            if (count <= 2){
-                nums[insertIndex++] = nums[i];
+            if (nums[i] == nums[i-1]){
+                count++;
+            }else{
+                count = 1;
+            }
+            if (count <=2){
+                nums[insertIndex] = nums[i];
+                insertIndex++;
             }
         }
         return insertIndex;
