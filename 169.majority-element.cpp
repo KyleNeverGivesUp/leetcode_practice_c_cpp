@@ -8,7 +8,20 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        
+        int len = nums.size();
+        unordered_map<int, int> mp;
+        for (int i:nums){
+            if (mp.find(i) == mp.end()){
+                mp[i] = 1;
+            }else mp[i]+=1;
+        }
+
+        for (const pair<int, int>& j: mp){
+            if (j.second > len / 2){
+                return j.first;
+            }
+        }
+        return 0;
     }
 };
 // @lc code=end
