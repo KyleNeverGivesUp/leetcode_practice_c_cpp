@@ -24,7 +24,7 @@ public:
         // nums = vt;
 
         // solution 3 brute force
-        // int temp, prev, previous = 0;
+        // int temp, previous = 0;
         // for (int i=0; i < k; ++i){
         //     previous = nums[size - 1];
         //     for (int j=0; j< size; ++j){
@@ -34,7 +34,20 @@ public:
         //     }
         // }
 
-        // solution 
+        // solution Cyclic Replacements
+        int temp=0, prev=0, current=0, count=0, start = 0;
+        while(count < size){
+            current = start; prev = nums[start];
+            do{
+                int next = (current + k) % size;
+                temp = nums[next];
+                nums[next] = prev;
+                prev = temp;
+                current = next;
+                count++;
+            }while( current != start);
+            start++;
+        }
     }
 };
 // @lc code=end
