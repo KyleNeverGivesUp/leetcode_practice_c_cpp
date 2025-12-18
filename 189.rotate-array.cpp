@@ -17,12 +17,24 @@ public:
 
         //solution 2 more Using Extra Array
 
-        vector<int> vt(size);
-        for (int i=0; i<size; ++i){
-            vt[(i+k)%size] = nums[i];
-        }
-        nums = vt;
+        // vector<int> vt(size);
+        // for (int i=0; i<size; ++i){
+        //     vt[(i+k)%size] = nums[i];
+        // }
+        // nums = vt;
 
+        // solution 3 brute force
+        // int temp, prev, previous = 0;
+        // for (int i=0; i < k; ++i){
+        //     previous = nums[size - 1];
+        //     for (int j=0; j< size; ++j){
+        //         temp = nums[j];
+        //         nums[j] = previous;
+        //         previous = temp;
+        //     }
+        // }
+
+        // solution 
     }
 };
 // @lc code=end
