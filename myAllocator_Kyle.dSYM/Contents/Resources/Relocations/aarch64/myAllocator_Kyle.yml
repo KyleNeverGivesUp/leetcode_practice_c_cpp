@@ -1,0 +1,10 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     myAllocator_Kyle
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _init_heap, symObjAddr: 0x0, symBinAddr: 0x100003D88, symSize: 0x50 }
+  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _HEAP_START, symObjAddr: 0xAF0, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x6E, offset: 0x6E, size: 0x8, addend: 0x0, symName: _init_heap, symObjAddr: 0x0, symBinAddr: 0x100003D88, symSize: 0x50 }
+  - { offsetInCU: 0x92, offset: 0x92, size: 0x8, addend: 0x0, symName: _malloc, symObjAddr: 0x50, symBinAddr: 0x100003DD8, symSize: 0x140 }
+  - { offsetInCU: 0x147, offset: 0x147, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x190, symBinAddr: 0x100003F18, symSize: 0x64 }
+...
