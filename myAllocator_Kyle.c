@@ -41,7 +41,10 @@ int main(){
     printf("god\n");
     init_heap();
     int* a = my_malloc(40);
-    int* b = my_malloc(50);
-    printf("%llu %llu %llu\n", HEAP_START[0], HEAP_START[1], HEAP_START[2]);
+    printf("%llu %llu %llu\n", HEAP_START[0], HEAP_START[1], HEAP_START[6]);
+    int* b = my_malloc(10);
+    printf("%llu %llu\n", HEAP_START[6], HEAP_START[9]);
+    int* c = my_malloc(321);
+    printf("%p\n", c);
     
 }

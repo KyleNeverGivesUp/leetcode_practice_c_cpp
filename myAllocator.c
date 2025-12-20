@@ -49,10 +49,11 @@ int main(){
     // printf("%llu\n", *HEAP_START);
     // ((size + 7) / 8) * 8;
     int* a = my_malloc(40);
+    // int* b = malloc(10);
     printf("%llu %llu %llu\n", HEAP_START[0], HEAP_START[1], HEAP_START[6]);
     // printf("%d\n", getpagesize());
     
-    // int* b = malloc(10);
+    
     
     return 0;
 }
