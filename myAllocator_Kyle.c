@@ -37,14 +37,38 @@ void* my_malloc(size_t size){
     return NULL;
 }
 
+void print_heap(){
+    uint64_t* current = HEAP_START;
+    while(current < HEAP_START + (HEAP_SIZE / VAL_SIZE)){
+        uint64_t cur_header = *current;
+        uint64_t cur_size = (cur_header / 2) * 2;
+        printf("%p\t%llu\t%llu\n", current, cur_header % 2, cur_size);
+        uint64_t* next = current + (cur_size / VAL_SIZE) + 1;
+        current = next;
+    }
+    printf("\n\n");
+}
+
+void my_free(void* p){
+    uint64_t* current = p;
+    uint64_t* cur_header = current - 1;
+    if (*cur_header % 2 == 1){
+        *cur_header = *cur_header - 1;
+    }
+}
+
 int main(){
     printf("god\n");
     init_heap();
     int* a = my_malloc(40);
-    printf("%llu %llu %llu\n", HEAP_START[0], HEAP_START[1], HEAP_START[6]);
+    // printf("%llu %llu %llu\n", HEAP_START[0], HEAP_START[1], HEAP_START[6]);
+    print_heap();
     int* b = my_malloc(10);
-    printf("%llu %llu\n", HEAP_START[6], HEAP_START[9]);
-    int* c = my_malloc(321);
-    printf("%p\n", c);
+    print_heap();
+
+    my_free(b);
+    // printf("%llu %llu\n", HEAP_START[6], HEAP_START[9]);
+    int* c = my_malloc(32);
+    print_heap();
     
 }
