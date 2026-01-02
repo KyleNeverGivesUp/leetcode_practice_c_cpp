@@ -24,7 +24,7 @@ void* my_malloc(size_t size){
             size_t rounded = ((size + 7 ) / 8) * 8;
             *current = rounded + 1;
             // make sure the remaining space is meaningful block
-            if(curr_size >= (rounded + VAL_SIZE + 16)){
+            if(curr_size >= (rounded + 16)){
                 size_t remaining = curr_size - (rounded + VAL_SIZE);
                 uint64_t* remaining_ptr = current + (rounded / VAL_SIZE) + 1;
                 *remaining_ptr = remaining;
@@ -71,6 +71,6 @@ int main(){
     print_heap();
     uint64_t* d = my_malloc(30);
     print_heap();
-    int* e = my_malloc(12);
+    int* e = my_malloc(8);
     print_heap();
 }
