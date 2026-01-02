@@ -15,15 +15,20 @@ void init_heap(){
 
 void* my_malloc(size_t size){
     uint64_t* current = HEAP_START;
-    while(current < HEAP_START + ( HEAP_SIZE / VAL_SIZE)){
+    int count = 0;
+    while((current < HEAP_START + ( HEAP_SIZE / VAL_SIZE)) && count < 10){
         uint64_t curr_header = *current;
         uint64_t curr_size = (curr_header / 2) * 2;
-        if ((curr_header %2 == 0) && (curr_size > size)){
+        count ++;
+        if ((curr_header %2 == 0) && (curr_size >= size)){
             size_t rounded = ((size + 7 ) / 8) * 8;
             *current = rounded + 1;
-            uint64_t remaining = curr_size - (rounded + VAL_SIZE);
-            uint64_t* remaining_ptr = current + (rounded / VAL_SIZE) + 1;
-            *remaining_ptr = remaining;
+            // make sure the remaining space is meaningful block
+            if(curr_size >= (rounded + VAL_SIZE + 16)){
+                size_t remaining = curr_size - (rounded + VAL_SIZE);
+                uint64_t* remaining_ptr = current + (rounded / VAL_SIZE) + 1;
+                *remaining_ptr = remaining;
+            }
             return current+1;
         }else{
             uint64_t* next = current + (curr_size / VAL_SIZE) + 1;
@@ -43,10 +48,12 @@ void my_free(void* p){
 
 void print_heap(){
     uint64_t* current = HEAP_START;
-    while(current < HEAP_START + (HEAP_SIZE / VAL_SIZE)){
+    int count = 0;
+    while((current < (HEAP_START + (HEAP_SIZE / VAL_SIZE)))){
+        count ++ ;
         uint64_t curr_header = *current;
         uint64_t curr_size = (curr_header / 2) * 2;
-        printf("%p %llu %llu\n", current, curr_header % 2, curr_size);
+        printf("%p\t%llu\t%llu\n", current, curr_header % 2, curr_size);
         uint64_t* next = current + (curr_size / VAL_SIZE) + 1;
         current = next;
     }
@@ -55,13 +62,15 @@ void print_heap(){
 
 int main(){
     init_heap();
-    uint64_t* m1 = my_malloc(40);
+    uint64_t* a = my_malloc(40);
     // printf("%llu %llu %llu\n", HEAP_START[0], HEAP_START[1], HEAP_START[6]);
-    print_heap();
-    uint64_t* m2 = my_malloc(10);
-    print_heap();
-    // my_free(m2);
-    // uint64_t* m3 = my_malloc(32);
     // print_heap();
-    // printf("%llu %llu %llu\n", HEAP_START[0], HEAP_START[1], HEAP_START[6]);
+    uint64_t* b = my_malloc(10);
+    uint64_t* c = my_malloc(20);
+    my_free(b);
+    print_heap();
+    uint64_t* d = my_malloc(30);
+    print_heap();
+    int* e = my_malloc(12);
+    print_heap();
 }
