@@ -10,7 +10,7 @@ public:
     bool isValid(string s) {
         // std::stack<char> leftBrackets;
         // std::unordered_map<char, char> pairings = {
-        //     {')', '('},
+        //     {')', '('}, 
         //     {']', '['},
         //     {'}', '{'}
         // };////
