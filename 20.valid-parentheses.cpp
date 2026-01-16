@@ -19,7 +19,7 @@ public:
         //     if (pairings.find(c) == pairings.end()){
         //         leftBrackets.push(c);
         //     } 
-        //     else {
+        //     else { 
         //         if (leftBrackets.empty()){
         //             return false;
         //         }
