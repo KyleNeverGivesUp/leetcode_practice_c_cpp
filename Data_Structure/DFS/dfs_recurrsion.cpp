@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <stack>
+// #include <stack>
 using namespace std;
 
 vector<vector<int>> graph;
@@ -16,7 +16,7 @@ void dfs(int v){
     state[v] = 2;
 }
 
-void main(){
+int main(){
     graph = {
         {1, 2},    // 0
         {0, 2},    // 1
@@ -26,6 +26,18 @@ void main(){
         {}         // 5
     };
 
-    int i = graph.size();
-    graph->
+    int n = graph.size();
+    state.assign(n,0);
+
+    for (int i = 0; i < n; i++){
+        if (state[i] == 0){
+            dfs(i);
+        }
+    }
+
+    for (int i=0; i< n; i++){
+        cout << "node " << i << ": state" << state[i] << "\n";
+    }
+    return 0;
+    
 }
