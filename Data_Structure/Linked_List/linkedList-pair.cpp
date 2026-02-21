@@ -12,9 +12,9 @@ linkedList::~linkedList(){
         delete curr;
         curr = nextNode;
     }
-    cout << "memory is clear" << endl;
+    cout << "memory is clea r" << endl;
 }
 
 void linkedList::append(int value){
-    
+
 }
