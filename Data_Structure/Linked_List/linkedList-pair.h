@@ -21,5 +21,5 @@ class linkedList{
         void append(int value);
         void print();
 };
-
+ 
 #endif
