@@ -7,7 +7,7 @@ vector<vector<int>> graph;
 vector<int> state;
 
 void dfs(int i){
-    cout << "visiting vetex i:  " << i << endl;
+    cout << "visiting vetex i: " << i << endl;
     if (state[i] == 2) {
         cout << "Explored " << i << endl;
         return;
