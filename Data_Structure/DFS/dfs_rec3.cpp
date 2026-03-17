@@ -23,6 +23,7 @@ void dfs(int i){
 
 int main(){
     graph = {
+        
         {2,3},{4,5},{6},{},{6},{}
     };
     int n = graph.size();
