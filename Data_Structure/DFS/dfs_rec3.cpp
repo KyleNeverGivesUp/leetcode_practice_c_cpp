@@ -36,5 +36,5 @@ int main(){
         cout << "vetex: " << i << "state: " << state[i] << endl;
     }
     
-    return 0;
+    return 0 ;
 }
