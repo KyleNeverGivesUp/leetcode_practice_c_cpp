@@ -33,7 +33,7 @@ int main(){
         dfs(i);
     }
     for (int i=0; i<n;i++){
-        cout << "vetex:  " << i << "state: " << state[i] << endl;
+        cout << "vetex: " << i << "state: " << state[i] << endl;
     }
     
     return 0 ;
