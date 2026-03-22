@@ -1,4 +1,9 @@
 
+"""
+Maximum diff between two number in one array
+"""
+
+
 def count_floor(num):
     if num == 2: ret = 2
     if num == 1: ret = 1
