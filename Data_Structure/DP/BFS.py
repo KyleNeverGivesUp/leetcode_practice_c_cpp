@@ -10,12 +10,12 @@ from collections import deque
 
 def BFS(graph, s):
     queue = deque([s])
-    visitied.append(s)
+    visited.append(s)
     while queue:
         node = queue.popleft()
         for i in graph[node]:
-            if i not in visitied:
-                visitied.append(i)
+            if i not in visited:
+                visited.append(i)
                 queue.append(i)
 
 if __name__ == "__main__":
@@ -27,6 +27,6 @@ if __name__ == "__main__":
     4: [1, 5],
     5: [2, 4]
 }
-    visitied = []
+    visited = []
     BFS(graph, 0)
-    print(visitied)
+    print(visited)
