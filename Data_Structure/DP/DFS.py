@@ -1,5 +1,5 @@
 # 0 = unvisited, 1 = visited
-def DFS(graph, s):
+def DFS_RECURSION(graph, s):
     if s not in visited:
         visited.append(s)
         for i in graph[s]:
@@ -7,6 +7,15 @@ def DFS(graph, s):
                 DFS(graph, i)
         
             
+def DFS_STACK(graph, s):
+    stack = [s]
+    while stack:
+        node = stack.pop()
+        if node not in visited:
+            visited.append(node)
+            for i in reversed(graph[node]):
+                if i not in visited:
+                    stack.append(i)
 
 
 if __name__ == "__main__":
@@ -19,6 +28,7 @@ if __name__ == "__main__":
     5: [2, 4]
 }
     visited = []
-    DFS(graph, 0)
+    # DFS_RECURSION(graph, 0)
+    DFS_STACK(graph, 0)
     print(visited)
     
