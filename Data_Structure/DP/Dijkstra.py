@@ -17,7 +17,7 @@ def dijkstra(graph, start: int):
     #             heapq.heappush(heap, (dist[v], v))
     
     # return dist
-    dist = {node : float('inf') for node in graph}
+    dist = {node: float('inf') for node in graph}
     dist[start] = 0
     heap = [(0, start)]
     while heap:
