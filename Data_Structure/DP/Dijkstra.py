@@ -31,6 +31,10 @@ def dijkstra(graph, start: int):
                 heapq.heappush(heap, (dist[v], v))
     return dist
 
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 if __name__ == "__main__":
     # n = 节点数, edges = [[u, v, weight], ...]
@@ -43,7 +47,27 @@ if __name__ == "__main__":
 
     # heap = [(1, 'A')]
     # heapq.heappush(heap, (1, 'A'))
-    print(dijkstra(graph, 'A'))
+    # print(dijkstra(graph, 'A'))
+    from collections import Counter
+    # print(Counter({'a':2, 'b':1, 'a':3}))
+    a = [1, 2, 3]
+    it = iter(a)
     
+    # print(prev(it))
+    b = (i*2 for i in range(1000000))  # 几乎不占内存
+    next(b)
+    # print(next(b))
+    
+        
 
+
+    # dummy = ListNode()
+    # curr = dummy
+    # print(f'dummy: {id(dummy)}')
+    # print(f'curr: {id(curr)}')
+    # import copy
+    # curr2 = copy.copy(dummy)
+    # print(f'curr2: {id(curr2)}')
+    # curr3 = copy.deepcopy(dummy)
+    # print(f'curr3: {id(curr3)}')
     
