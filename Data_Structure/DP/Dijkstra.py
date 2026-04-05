@@ -58,9 +58,11 @@ if __name__ == "__main__":
     next(b)
     # print(next(b))
     
-        
-
-
+    from collections import defaultdict
+    d = defaultdict(dict)
+    d["key"] = 2
+    # print(d["key"])
+    # print(d)
     # dummy = ListNode()
     # curr = dummy
     # print(f'dummy: {id(dummy)}')
@@ -70,4 +72,13 @@ if __name__ == "__main__":
     # print(f'curr2: {id(curr2)}')
     # curr3 = copy.deepcopy(dummy)
     # print(f'curr3: {id(curr3)}')
-    
+    # lst = [1, 2, 3, 4]
+    lst = []
+    # lst.remove(2)   # 删第一个值=2，lst=[1,3,2]，返回None
+    # lst.pop(1)      # 删index=1，lst=[1,3,2]→[1,2]，返回3
+    # lst.append(1)       # 删最后一个，返回该元素
+    # lst.append(2)
+    # lst.append(3)
+    # lst.remove(2)
+    lst.append(1)
+    print(lst.pop())
