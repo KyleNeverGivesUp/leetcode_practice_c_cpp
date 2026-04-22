@@ -17,5 +17,6 @@ public:
         return lastPos == 0;
     }
 };
+
 // @lc code=end
 
